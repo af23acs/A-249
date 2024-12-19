@@ -6,9 +6,7 @@ df<-combined_df[,c(1,2,3)]
 df
 df2<-spread(df1,key=Action,value=X2018.19)
 View(df2)
-
 cor.test(df2$import, df2$consumption)
-
 df2 <- df2[is.finite(df2$import) & is.finite(df2$consumption), ]
 hist(df2$import, breaks=10, col=rgb(1,0,0,0.5), xlim=range(c(df2$import, df2$consumption), na.rm=TRUE), main="Histogram of Sugar Imports and Consumption", xlab="Value", ylab="Frequency")
 hist(df2$consumption, breaks=10, col=rgb(0,0,1,0.5), add=TRUE)
